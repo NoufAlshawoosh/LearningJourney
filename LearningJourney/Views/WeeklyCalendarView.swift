@@ -161,7 +161,7 @@ func getWeekDays(date: Date) -> [String]{
     
     weekDays.append(String(Calendar.current.component(.day, from: date)))
     
-    for i in 0...5 {
+    for _ in 0...5 {
         
         date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
         
