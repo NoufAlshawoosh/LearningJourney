@@ -64,7 +64,7 @@ struct WeeklyCalendarView : View {
                     //.border(.white, width: 2)
                 // end of HStack
                 
-                Spacer().frame(height: 18)
+                Spacer().frame(height: 12)
                 
                 HStack(spacing: 17){
                     ForEach(Calendar.current.shortWeekdaySymbols, id: \.self){
