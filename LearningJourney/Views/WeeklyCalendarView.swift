@@ -16,45 +16,53 @@ struct WeeklyCalendarView : View {
         ZStack{
             VStack{
                 HStack{
-                    Text(getMonthYearName(date: date))
-                        .fontWeight(.semibold)
-                        .font(.system(size: 17))
+                    HStack {
+                        Text(getMonthYearName(date: date))
+                            .fontWeight(.semibold)
+                            .font(.system(size: 17))
+                        
+                        
+                        Button(action: {
+                            
+                        }){
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 13))
+                                .fontWeight(.bold)
+                                .foregroundStyle(.orange)
+                        }
+                    }.frame(maxWidth: .infinity, maxHeight: 24, alignment: .leading)
+                        // end of HStack
                     
-                    Button(action: {
-
-                    }){
-                        Image(systemName: "chevron.right")
-                            .font(.system(size: 13))
-                            .fontWeight(.bold)
-                            .foregroundStyle(.orange)
-                    }
                     
-                    Spacer().frame(width: 150)
-                    
-                    Button(action: {
-                        date = Calendar.current.date(byAdding: .day, value: -7, to: date)!
-                    }){
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 20))
-                            .fontWeight(.medium)
-                            .foregroundStyle(.orange)
-                    }
-                    
-                    Spacer().frame(width: 28)
-                    
-                    Button(action: {
-                        date = Calendar.current.date(byAdding: .day, value: 7, to: date)!
-                    }){
-                        Image(systemName: "chevron.right")
-                            .font(.system(size: 20))
-                            .fontWeight(.medium)
-                            .foregroundStyle(.orange)
-                    }
+                    HStack {
+                        Button(action: {
+                            date = Calendar.current.date(byAdding: .day, value: -7, to: date)!
+                        }){
+                            Image(systemName: "chevron.left")
+                                .font(.system(size: 20))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.orange)
+                        }
+                        
+                        
+                        Spacer().frame(width: 28)
+                        
+                        Button(action: {
+                            date = Calendar.current.date(byAdding: .day, value: 7, to: date)!
+                        }){
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 20))
+                                .fontWeight(.medium)
+                                .foregroundStyle(.orange)
+                        }
+                    }.frame(maxWidth: .infinity, maxHeight: 24, alignment: .trailing)
+                        // end of HStack
                     
                     
                 }.frame(maxWidth: .infinity, maxHeight: 40, alignment: .leading)
                     .padding(.horizontal, 30)
-                    //.border(.white, width: 2)// end of HStack
+                    //.border(.white, width: 2)
+                // end of HStack
                 
                 Spacer().frame(height: 18)
                 
