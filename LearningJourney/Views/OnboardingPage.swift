@@ -160,7 +160,7 @@ struct OnboardingPage: View {
         // end of ScrollView
         
         
-    }// end of ZStack
+        }.preferredColorScheme(.dark)// end of ZStack
     
 }
 }
