@@ -100,7 +100,17 @@ struct HomePage : View {
                                               
             }// end of ZStack
             
-            
+            Button(action: {}){
+                Text("Log as \n Learned")
+                    .foregroundStyle(.white)
+                    .font(.system(size: 36))
+                    .fontWeight(.bold)
+                    .frame(width: 274, height: 274)
+                    .background(Color(red: 179/255, green: 70/255, blue: 0/255))
+                    .clipShape(Circle())
+                    .glassEffect(.clear)
+            }
+                
             
             
             
