@@ -12,6 +12,49 @@ struct HomePage : View {
         
         VStack{
             
+            Spacer().frame(height: 62)
+            
+            HStack {
+                Text("Activity")
+                    .font(.system(size: 34))
+                    .fontWeight(.bold)
+                    .padding(.trailing, 139)
+                
+                Button(action: {}){
+                    Image(systemName: "calendar")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 17))
+                        .fontWeight(.medium)
+                        .frame(width: 44, height: 44)
+                        .background(Color(red: 26/255, green: 26/255, blue: 26/255))
+                        .clipShape(Circle())
+                        .glassEffect(.clear.tint(.white.opacity(0.3)))
+                }
+                
+                Spacer().frame(width: 12)
+                
+                Button(action: {}){
+                    Image(systemName: "pencil.and.outline")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 17))
+                        .fontWeight(.medium)
+                        .frame(width: 44, height: 44)
+                        .background(Color(red: 26/255, green: 26/255, blue: 26/255))
+                        .clipShape(Circle())
+                        .glassEffect(.clear.tint(.white.opacity(0.3)))
+                }
+                
+                
+            }.frame(maxWidth: .infinity, maxHeight: 46, alignment: .leading)
+                .padding(.horizontal, 16)
+                //.border(.white)
+            // end of HStack
+            
+            
+            Spacer().frame(height: 37)
+            
+            
+            
             ZStack{
                 Rectangle()
                     .frame(width: 365, height: 254)
@@ -100,6 +143,8 @@ struct HomePage : View {
                                               
             }// end of ZStack
             
+            Spacer().frame(height: 32)
+            
             Button(action: {}){
                 Text("Log as \n Learned")
                     .foregroundStyle(.white)
@@ -109,11 +154,34 @@ struct HomePage : View {
                     .background(Color(red: 179/255, green: 70/255, blue: 0/255))
                     .clipShape(Circle())
                     .glassEffect(.clear)
+                    .shadow(color: Color(red: 255/255, green: 191/255, blue: 134/255), radius: 0.4, x: 1, y: 1)
+                    .shadow(color: Color(red: 255/255, green: 191/255, blue: 134/255), radius: 0.4, x: -1, y: -1)
             }
-                
+             
+            
+            Spacer().frame(height: 32)
+            
+            Button(action: {}){
+                Text("Log as Freezed")
+                    .foregroundStyle(.white)
+                    .font(.system(size: 17))
+                    .fontWeight(.medium)
+                    .frame(width: 274, height: 48)
+                    .background(Color(red: 0/255, green: 134/255, blue: 148/255))
+                    .clipShape(.capsule)
+                    .glassEffect(.clear)
+                    .shadow(color: Color(red: 0/255, green: 210/255, blue: 224/255), radius: 0.4, x: 1, y: 1)
+                    .shadow(color: Color(red: 0/255, green: 210/255, blue: 224/255), radius: 0.4, x: -1, y: -1)
+            }
             
             
+            Spacer().frame(height: 12)
             
+            Text("1 out of 2 Freezes used")
+                .font(.system(size: 14))
+                .foregroundStyle(.gray)
+            
+            Spacer().frame(height: 52)
             
             
         } // end of VStack
